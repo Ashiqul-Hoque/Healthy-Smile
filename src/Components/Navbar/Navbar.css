@@ -1,0 +1,15 @@
+.navList a {
+  text-decoration: none;
+  padding: 8px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 10px;
+  margin: 20px 10px;
+}
+
+.active-link a {
+  text-decoration: none;
+}
+.link {
+  color: black;
+}
