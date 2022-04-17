@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Rog Rodrigaze",
+    "img": "customer-image/player-1.png",
+    "text": "\"My buying experience was too good, i bought it from my home town. Me and my friends are enjoying this bike and riding is also good but not for long drive. Looks and performance is good enough , servicing is also nice in service centre.\""
+  },
+  {
+    "id": 2,
+    "name": "Bernie Chris",
+    "img": "customer-image/player-2.png",
+    "text": "\"Brought recently, have raided around 200 kms, no major issues . Bike Suspension needs to be little improved. Build quality is excellent. Comfortable for daily use. Compact and smooth while driving\""
+  },
+  {
+    "id": 3,
+    "name": "Sam Timburg",
+    "img": "customer-image/player-3.png",
+    "text": "\"Yamaha Aerox is my dream bike. Its not big capacity, only 155cc. But bike looking amazing. Proud of you Yamaha Motors!. Its very nice bike to travelling sporty and anything!...\""
+  }
+]
