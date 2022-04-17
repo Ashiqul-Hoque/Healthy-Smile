@@ -1,4 +1,4 @@
-# Moto Racer
+# Healthy Smile
 
 ## Live site: https://healthy-smile-70015.web.app/
 
