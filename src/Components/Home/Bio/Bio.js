@@ -6,8 +6,8 @@ const Bio = () => {
   return (
     <div>
       <div>
-        <h2>Meet Dr. Liza</h2>
-        <div className="d-flex">
+        <h2 className="text-center text-primary pt-5 pb-3">Meet Dr. Liza</h2>
+        <div className="d-flex container">
           <div>
             <img className="w-100" src={doctor} alt="" />
           </div>

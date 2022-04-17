@@ -1,20 +1,23 @@
 [
   {
     "id": 1,
-    "name": "Rog Rodrigaze",
+    "name": "Teeth Scaling & Whitening",
     "img": "customer-image/player-1.png",
-    "text": "\"My buying experience was too good, i bought it from my home town. Me and my friends are enjoying this bike and riding is also good but not for long drive. Looks and performance is good enough , servicing is also nice in service centre.\""
+    "text": "Teeth Scaling & whitening is a procedure that is performed on a regular basis. Scaling goes considerably deeper than a conventional cleaning, which only deals with the surface of the tooth. Teeth whitening involves strong whitening agents being applied onto your teeth. The rest of your mouth, including your gums, is protected from the whitening materials.",
+    "price": 149.99
   },
   {
     "id": 2,
-    "name": "Bernie Chris",
+    "name": "Dental Filling",
     "img": "customer-image/player-2.png",
-    "text": "\"Brought recently, have raided around 200 kms, no major issues . Bike Suspension needs to be little improved. Build quality is excellent. Comfortable for daily use. Compact and smooth while driving\""
+    "text": "Dental Filling is a way to replace the decayed/damaged tooth structure and restore it back to its normal function and strength. One does not suit all! The dentist, according to the clinical situation, will choose what’s best for you. Depending on your teeth condition, you will be suggested one of the following materials like glass lonomer or composite material.",
+    "price": 249.99
   },
   {
     "id": 3,
-    "name": "Sam Timburg",
+    "name": "Dental Implants",
     "img": "customer-image/player-3.png",
-    "text": "\"Yamaha Aerox is my dream bike. Its not big capacity, only 155cc. But bike looking amazing. Proud of you Yamaha Motors!. Its very nice bike to travelling sporty and anything!...\""
+    "text": "Dental implants are permanently placed in the mouth to replace missing teeth (either congenitally or due to disease) and hence look, function and feel like natural teeth.",
+    "price": 399.99
   }
 ]
