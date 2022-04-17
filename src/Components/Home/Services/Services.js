@@ -13,7 +13,7 @@ const Services = () => {
   return (
     <div>
       <h3 className="text-center mt-4 text-primary">Services</h3>
-      <div className="card-container d-flex">
+      <div className="card-container">
         {serviceData.map((service) => (
           <Service service={service} key={service.id}></Service>
         ))}
