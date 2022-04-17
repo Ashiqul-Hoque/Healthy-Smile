@@ -11,10 +11,14 @@ const Service = (props) => {
           <div className="card-body">
             <h5 className="card-title">{name}</h5>
             <p className="card-text">{text}</p>
-            <p className="card-text mb-0">Price: $ {price}</p>
+            <p className="card-text mb-0">
+              <strong>Price: $ {price}</strong>
+            </p>
           </div>
-          <div className="mx-auto pb-3">
-            <button className="button">Book Service</button>
+          <div className="mx-auto pb-3 mt-3">
+            <button className="button btn btn-primary px-5 py-2">
+              Book Service
+            </button>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ const Services = () => {
       .then((data) => setServiceData(data));
   }, []);
   return (
-    <div>
+    <div className="my-5">
       <h3 className="text-center mt-4 text-primary">Services</h3>
       <div className="card-container">
         {serviceData.map((service) => (
