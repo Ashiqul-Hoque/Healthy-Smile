@@ -64,6 +64,16 @@ const Navbar = () => {
                   Login
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "active-link" : "link"
+                  }
+                  to="/checkout"
+                >
+                  Checkout
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
