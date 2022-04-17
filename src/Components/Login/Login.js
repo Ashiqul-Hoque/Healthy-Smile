@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase.init";
 import "./Login.css";
 import SocialLogin from "./SocialLogin/SocialLogin";
@@ -8,8 +8,12 @@ import SocialLogin from "./SocialLogin/SocialLogin";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const [signInWithEmail, user, loading, error] =
+  let from = location.state?.from?.pathname || "/";
+
+  const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
   const handleEmailData = (e) => {
@@ -22,7 +26,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    signInWithEmail(email, password);
+    signInWithEmailAndPassword(email, password);
   };
 
   if (error) {
@@ -36,11 +40,7 @@ const Login = () => {
     return <p>Loading...</p>;
   }
   if (user) {
-    return (
-      <div>
-        <p>Signed In User: {user.email}</p>
-      </div>
-    );
+    navigate(from, { replace: true });
   }
 
   return (
@@ -54,8 +54,7 @@ const Login = () => {
             onBlur={handleEmailData}
             type="email"
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
+            required
           />
           <div id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
@@ -69,12 +68,12 @@ const Login = () => {
             onBlur={handlePasswordData}
             type="password"
             className="form-control"
-            id="exampleInputPassword1"
+            required
           />
         </div>
 
         <button type="submit" className="btn btn-primary">
-          Submit
+          Log In
         </button>
       </form>
       <SocialLogin></SocialLogin>

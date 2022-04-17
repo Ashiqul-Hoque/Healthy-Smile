@@ -2,8 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../Images/logo.png";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+  const handleSignOut = () => {
+    signOut(auth);
+  };
   return (
     <div className="sticky-top">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -59,20 +66,24 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     isActive ? "active-link" : "link"
                   }
-                  to="/login"
-                >
-                  Login
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive ? "active-link" : "link"
-                  }
                   to="/checkout"
                 >
                   Checkout
                 </NavLink>
+              </li>
+              <li>
+                {user ? (
+                  <button onClick={handleSignOut}>SignOut</button>
+                ) : (
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "active-link" : "link"
+                    }
+                    to="/login"
+                  >
+                    Login
+                  </NavLink>
+                )}
               </li>
             </ul>
           </div>

@@ -7,7 +7,7 @@ const Footer = () => {
       <footer className="text-white">
         <p className="text-center">
           All rights reserved by{" "}
-          <span class="text-dark">
+          <span className="text-dark">
             <strong className="text-primary">Healthy Smile</strong>
           </span>
           &copy;2022.

@@ -7,11 +7,10 @@ const RequireAuth = ({ children }) => {
   const [user, loading, error] = useAuthState(auth);
   const location = useLocation();
 
-  if (user) {
-    return children;
-  } else {
+  if (!user) {
     return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
   }
+  return children;
 };
 
 export default RequireAuth;
