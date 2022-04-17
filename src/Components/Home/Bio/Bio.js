@@ -9,7 +9,7 @@ const Bio = () => {
         <h2>Meet Dr. Liza</h2>
         <div className="d-flex">
           <div>
-            <img src={doctor} alt="" />
+            <img className="w-100" src={doctor} alt="" />
           </div>
           <div>
             <p>

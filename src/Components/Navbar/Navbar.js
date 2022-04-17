@@ -1,15 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+import logo from "../../Images/logo.png";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="sticky-top">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            hii
-          </a>
+          <div className="navbar-brand ms-4">
+            <img height={50} src={logo} alt="" /> Healthy Smile
+          </div>
           <button
             className="navbar-toggler"
             type="button"

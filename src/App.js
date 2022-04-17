@@ -3,6 +3,7 @@ import "./App.css";
 import ErrorPage from "./Components/404Page/ErrorPage";
 import AboutMe from "./Components/About Me/AboutMe";
 import Blog from "./Components/Blog/Blog";
+import CheckOut from "./Components/CheckOut/CheckOut";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" element={<AboutMe></AboutMe>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/checkout" element={<CheckOut></CheckOut>}></Route>
         <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
       </Routes>
       <Footer></Footer>
