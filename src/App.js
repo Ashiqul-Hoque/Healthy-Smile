@@ -4,6 +4,7 @@ import RequireAuth from "./Auth/RequireAuth/RequireAuth";
 import ErrorPage from "./Components/404Page/ErrorPage";
 import AboutMe from "./Components/About Me/AboutMe";
 import Blog from "./Components/Blog/Blog";
+import CheckOut from "./Components/CheckOut/CheckOut";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
@@ -20,9 +21,14 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route
           path="/service/:serviceId"
+          element={<ServiceDetails></ServiceDetails>}
+        ></Route>
+
+        <Route
+          path="/checkout"
           element={
             <RequireAuth>
-              <ServiceDetails></ServiceDetails>
+              <CheckOut></CheckOut>
             </RequireAuth>
           }
         ></Route>

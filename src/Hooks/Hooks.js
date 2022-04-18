@@ -4,7 +4,9 @@ const useService = () => {
   const [serviceData, setServiceData] = useState([]);
 
   useEffect(() => {
-    fetch("serviceData.json")
+    fetch(
+      "https://raw.githubusercontent.com/Ashiqul-Hoque/Leader_Board/main/serviceData.json"
+    )
       .then((response) => response.json())
       .then((data) => setServiceData(data));
   }, []);
