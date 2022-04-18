@@ -40,7 +40,6 @@ const Login = () => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    console.log(email, password);
     signInWithEmailAndPassword(email, password);
   };
 

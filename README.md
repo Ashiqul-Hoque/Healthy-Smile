@@ -19,3 +19,4 @@
 - Bootstrap
 - Firebase Authentication
 - React Firebase Hooks
+- React Toastify

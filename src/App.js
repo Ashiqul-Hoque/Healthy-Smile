@@ -27,7 +27,7 @@ function App() {
           }
         ></Route>
         <Route path="/about" element={<AboutMe></AboutMe>}></Route>
-        <Route path="/blog" element={<Blog></Blog>}></Route>
+        <Route path="/blogs" element={<Blog></Blog>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
