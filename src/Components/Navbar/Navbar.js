@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../../Images/logo.png";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../../firebase.init";
+import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
 
 const Navbar = () => {
@@ -62,18 +62,10 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive ? "active-link" : "link"
-                  }
-                  to="/checkout"
-                >
-                  Checkout
-                </NavLink>
-              </li>
-              <li>
                 {user ? (
-                  <button onClick={handleSignOut}>SignOut</button>
+                  <button className="btn btn-primary" onClick={handleSignOut}>
+                    SignOut
+                  </button>
                 ) : (
                   <NavLink
                     className={({ isActive }) =>

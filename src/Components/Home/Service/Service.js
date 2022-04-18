@@ -1,9 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Service.css";
 
 const Service = (props) => {
-  const { name, img, text, price } = props.service;
+  const { name, img, text, price, id } = props.service;
+  const navigate = useNavigate();
+  const navigateToServiceDetails = (id) => {
+    navigate(`/service/${id}`);
+  };
   return (
     <div className="custom-card">
       <div className="card-group h-100">
@@ -17,11 +21,12 @@ const Service = (props) => {
             </p>
           </div>
           <div className="mx-auto pb-3 mt-3">
-            <Link to="/checkout">
-              <button className="button btn btn-primary">
-                Book Service: {name}
-              </button>
-            </Link>
+            <button
+              onClick={() => navigateToServiceDetails(id)}
+              className="button btn btn-primary"
+            >
+              Book Service
+            </button>
           </div>
         </div>
       </div>

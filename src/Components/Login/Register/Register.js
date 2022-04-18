@@ -1,13 +1,21 @@
 import React, { useState } from "react";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../../../firebase.init";
+import auth from "../../../firebase.init";
+import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Register.css";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
   const navigate = useNavigate();
+  let errorElement;
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -16,12 +24,15 @@ const Register = () => {
   const navigateLogin = () => {
     navigate("/login");
   };
-
-  if (user) {
-    navigate("/home");
+  if (loading) {
+    return <p>Loading...</p>;
   }
+  if (error) {
+    errorElement = <p className="text-danger">Error: {error?.message}</p>;
+  }
+
   const handleName = (e) => {
-    setEmail(e.target.value);
+    setName(e.target.value);
   };
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -31,24 +42,29 @@ const Register = () => {
     setPassword(e.target.value);
   };
 
-  const handleRegister = (event) => {
+  const handleRegister = async (event) => {
     event.preventDefault();
-    createUserWithEmailAndPassword(email, password);
+    console.log(email);
+    console.log(password);
+    await createUserWithEmailAndPassword(email, password);
+
+    await updateProfile({ displayName: name });
+    navigate("/home");
   };
 
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>Please Register</h2>
+      <h2 className="text-center mt-4">Please Register</h2>
 
       <div className="w-50 mx-auto">
         <form onSubmit={handleRegister}>
           <div className="mb-3">
-            <label for="exampleInputPassword1" className="form-label">
+            <label for="exampleInputName1" className="form-label">
               Name
             </label>
             <input
-              onChange={handleName}
               type="name"
+              onChange={handleName}
               className="form-control"
               required
             />
@@ -58,8 +74,8 @@ const Register = () => {
               Email address
             </label>
             <input
-              onChange={handleEmail}
               type="email"
+              onChange={handleEmail}
               className="form-control"
               required
             />
@@ -69,17 +85,20 @@ const Register = () => {
               Password
             </label>
             <input
-              onChange={handlePassword}
+              placeholder="Use password more than 6 character"
               type="password"
+              onChange={handlePassword}
               className="form-control"
               required
             />
           </div>
-
-          <button type="submit" className="btn btn-primary">
-            Submit
+          {errorElement}
+          <button type="submit" className="btn btn-primary d-block mx-auto">
+            Register
           </button>
         </form>
+
+        <SocialLogin></SocialLogin>
         <p>
           Already have an account?
           <Link
