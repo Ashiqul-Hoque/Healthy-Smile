@@ -5,7 +5,7 @@ const Blog = () => {
   return (
     <div className="container px-5 my-4">
       <div>
-        <h3>
+        <h3 className="text-info">
           What are the difference between authorization and authentication ?
         </h3>
         <p>
@@ -47,7 +47,7 @@ const Blog = () => {
         </p>
       </div>
       <div className="py-5">
-        <h3>
+        <h3 className="text-info">
           Why are you using firebase? What other options do you have to
           implement authentication?
         </h3>
@@ -81,7 +81,7 @@ const Blog = () => {
         </p>
       </div>
       <div>
-        <h3>
+        <h3 className="text-info">
           What other services does firebase provide other than authentication ?
         </h3>
         <p>

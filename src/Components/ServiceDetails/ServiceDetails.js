@@ -1,25 +1,47 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import useService from "../../Hooks/Hooks";
 import "./ServiceDetails.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ServiceDetails = () => {
   const { serviceId } = useParams();
   const [serviceData] = useService();
+  const navigate = useNavigate();
 
   const result = serviceData.find((e) => e.id == serviceId);
   console.log(result);
 
+  const bookedService = () => {
+    toast("Your selected service booked. Thank you");
+
+    const myTimeout = setTimeout(home, 4000);
+    function home() {
+      navigate("/home");
+    }
+    myTimeout();
+  };
+
   return result ? (
-    <div className="container my-4 w-50">
-      <h3 className="text-center">Service name: {result.name}</h3>
-      <p>Description: {result.text}</p>
-      <h5>Price: {result.price}</h5>
-      <Link
-        to="/checkout"
-        className="btn btn-primary d-block mx-auto w-25 my-4"
-      >
-        CheckOut
-      </Link>
+    <div className="serviceDetail-container container my-5">
+      <div className="d-flex justify-content-center">
+        <img className="mt-2 w-75" src={result.img} alt="" />
+      </div>
+      <div className="details-section p-5">
+        <h3 className="text-center">Service name: {result.name}</h3>
+        <p>Description: {result.text}</p>
+        <h5>Price: {result.price}</h5>
+        <button
+          onClick={bookedService}
+          className="btn btn-primary d-block mx-auto w-50 my-4"
+        >
+          CheckOut
+        </button>
+        <ToastContainer
+          autoClose={2800}
+          position="bottom-right"
+        ></ToastContainer>
+      </div>
     </div>
   ) : (
     <p>Loading</p>

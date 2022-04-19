@@ -7,7 +7,7 @@ const Bio = () => {
     <div>
       <div className="pb-5">
         <h2 className="text-center text-primary pt-5 pb-4">Doctor Info</h2>
-        <div className="container bio-section">
+        <div className="bio-section">
           <div>
             <img className="w-100" src={doctor} alt="" />
           </div>

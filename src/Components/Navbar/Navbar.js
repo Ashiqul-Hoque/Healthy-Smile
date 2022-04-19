@@ -13,7 +13,7 @@ const Navbar = () => {
   };
   return (
     <div className="sticky-top">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light p-2">
         <div className="container-fluid">
           <div className="navbar-brand ms-4">
             <img height={50} src={logo} alt="" /> Healthy Smile
@@ -31,7 +31,7 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 navList">
-              <li>
+              <li className="my-auto">
                 <NavLink
                   className={({ isActive }) =>
                     isActive ? "active-link" : "link"
@@ -41,7 +41,7 @@ const Navbar = () => {
                   Home
                 </NavLink>
               </li>
-              <li>
+              <li className="my-auto">
                 <NavLink
                   className={({ isActive }) =>
                     isActive ? "active-link" : "link"
@@ -51,7 +51,7 @@ const Navbar = () => {
                   About Me
                 </NavLink>
               </li>
-              <li>
+              <li className="my-auto">
                 <NavLink
                   className={({ isActive }) =>
                     isActive ? "active-link" : "link"
@@ -63,7 +63,10 @@ const Navbar = () => {
               </li>
               <li>
                 {user ? (
-                  <button className="btn btn-primary" onClick={handleSignOut}>
+                  <button
+                    className="btn btn-primary signout-btn"
+                    onClick={handleSignOut}
+                  >
                     SignOut
                   </button>
                 ) : (
