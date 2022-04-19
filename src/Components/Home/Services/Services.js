@@ -8,8 +8,8 @@ const Services = () => {
 
   return (
     <div className="my-5">
-      <h3 className="text-center mt-4 text-primary">Services</h3>
-      <div className="card-container">
+      <h2 className="text-center mt-4 text-primary">Services</h2>
+      <div className="card-container mt-5">
         {serviceData.map((service) => (
           <Service service={service} key={service.id}></Service>
         ))}

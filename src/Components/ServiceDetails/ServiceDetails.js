@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import useService from "../../Hooks/Hooks";
+import "./ServiceDetails.css";
 
 const ServiceDetails = () => {
   const { serviceId } = useParams();

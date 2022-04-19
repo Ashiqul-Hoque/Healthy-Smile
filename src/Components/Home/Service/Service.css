@@ -1,3 +1,15 @@
 .card img {
   padding: 20px;
 }
+.custom-card {
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 40px #bebebe, -20px -20px 40px #ffffff;
+  border: none;
+}
+.custom-card:hover {
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 48px #707070, -20px -20px 48px #ffffff;
+  border: none;
+}
