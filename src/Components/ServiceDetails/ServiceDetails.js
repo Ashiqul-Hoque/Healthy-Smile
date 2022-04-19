@@ -10,16 +10,14 @@ const ServiceDetails = () => {
   const navigate = useNavigate();
 
   const result = serviceData.find((e) => e.id == serviceId);
-  console.log(result);
 
   const bookedService = () => {
     toast("Your selected service booked. Thank you");
 
-    const myTimeout = setTimeout(home, 4000);
+    setTimeout(home, 4000);
     function home() {
       navigate("/home");
     }
-    myTimeout();
   };
 
   return result ? (
