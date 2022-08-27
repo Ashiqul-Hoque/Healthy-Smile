@@ -41,7 +41,7 @@ const Navbar = () => {
                   Home
                 </NavLink>
               </li>
-              <li className="my-auto">
+              {/* <li className="my-auto">
                 <NavLink
                   className={({ isActive }) =>
                     isActive ? "active-link" : "link"
@@ -50,8 +50,8 @@ const Navbar = () => {
                 >
                   About Me
                 </NavLink>
-              </li>
-              <li className="my-auto">
+              </li> */}
+              {/* <li className="my-auto">
                 <NavLink
                   className={({ isActive }) =>
                     isActive ? "active-link" : "link"
@@ -60,7 +60,7 @@ const Navbar = () => {
                 >
                   Blogs
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 {user ? (
                   <button
